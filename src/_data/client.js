@@ -3,9 +3,6 @@ module.exports = {
   name: 'Test Restaurant',
   restaurantName: 'Test Restaurant', // Full display name
   cuisine: 'American Cuisine',
-  description:
-    'A template restaurant for testing purposes. Features a variety of delicious dishes made with fresh ingredients and excellent service.',
-  tagline: 'Your Test Dining Experience',
 
   // Contact Information
   address: {
@@ -78,31 +75,3 @@ module.exports = {
     dessert: 'Dessert',
   },
 
-  // Hero Content
-  hero: {
-    title: 'Welcome to Test Restaurant',
-    subtitle:
-      'Fresh ingredients, great service, and an unforgettable dining experience at Test Restaurant',
-    ctaPrimary: 'Reserve Table',
-    ctaSecondary: 'View Menu',
-  },
-
-  // Features for About/Info sections
-  features: {
-    feature1: {
-      title: 'Fresh Ingredients',
-      description:
-        'We source only the finest and freshest ingredients to ensure every dish meets our high standards of quality and taste.',
-    },
-    feature2: {
-      title: 'Expert Chefs',
-      description:
-        'Our skilled chefs bring years of experience and culinary expertise to create memorable dining experiences.',
-    },
-    feature3: {
-      title: 'Family Friendly',
-      description:
-        'Perfect for family gatherings, birthday celebrations, or date nights with our comfortable seating and welcoming atmosphere.',
-    },
-  },
-}
