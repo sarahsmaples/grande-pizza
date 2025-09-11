@@ -1,49 +1,203 @@
-<section id="gallery" class="section section--gallery text-center">
-  <div class="container-fill">
-    <header class="section__header">
-      <h2 class="section__title section__title--invert"><small class="section__pretitle">Gallery</small>Explore Sumo Sumo Hibachi Bar</h2>
+<!--
+  RESTAURANT GALLERY TEMPLATE
+  ===========================
+  
+  IMAGE SIZING GUIDELINES FOR CLIENTS:
+  
+  THUMBNAIL IMAGES (for grid display):
+  - Size: 400x400px (square format)
+  - Format: JPEG or WebP
+  - Quality: 75-85% compression
+  - File size target: 15-40KB each
+  - Naming: Use descriptive names (e.g., "beef-steak-thumb.jpg")
+  
+  FULL-SIZE IMAGES (for modal view):
+  - Size: 1200x800px (3:2 aspect ratio recommended)
+  - Format: JPEG or WebP  
+  - Quality: 85-90% compression
+  - File size target: 80-200KB each
+  - Naming: Match thumbnail but with "-full" suffix (e.g., "beef-steak-full.jpg")
+  
+  HOW TO CUSTOMIZE:
+  1. Replace placeholder images with client's food photos
+  2. Update alt text and captions to describe actual dishes
+  3. Ensure images follow the sizing guidelines above
+  4. Test on mobile and desktop for optimal viewing
+  
+  CURRENT SETUP: Uses single placeholder image for all gallery items
+-->
+
+<section id="gallery" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-12">
+      <p class="text-sm font-medium text-gray-600 uppercase tracking-wide mb-2">Gallery</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Explore {{ client.restaurantName }}</h2>
     </header>
-    <div itemtype="http://schema.org/ImageGallery" class="gallery js-photoswipe-gallery itemscope">
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g1.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t1.jpg" itemprop="thumbnail" alt="Fresh Edamame" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Fresh Edamame</figcaption>
+    
+    <div itemtype="http://schema.org/ImageGallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 itemscope" id="gallery-grid">
+      <!-- Gallery Item 1 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 1</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g2.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t2.jpg" itemprop="thumbnail" alt="Shrimp Tempura" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Shrimp Tempura</figcaption>
+
+      <!-- Gallery Item 2 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 2</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g3.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t3.jpg" itemprop="thumbnail" alt="Chicken Gyoza" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Chicken Gyoza</figcaption>
+
+      <!-- Gallery Item 3 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 3</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g4.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t4.jpg" itemprop="thumbnail" alt="Vegetable Tempura" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Vegetable Tempura</figcaption>
+
+      <!-- Gallery Item 4 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 4</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g6.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t6.jpg" itemprop="thumbnail" alt="Teriyaki Chicken Hibachi" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Teriyaki Chicken Hibachi</figcaption>
+
+      <!-- Gallery Item 5 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 5</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g7.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t7.jpg" itemprop="thumbnail" alt="Hibachi Wagyu Sirloin" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Hibachi Wagyu Sirloin</figcaption>
+
+      <!-- Gallery Item 6 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 6</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g8.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t8.jpg" itemprop="thumbnail" alt="Hibachi Shrimp" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Hibachi Shrimp</figcaption>
+
+      <!-- Gallery Item 7 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 7</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g10.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t10.jpg" itemprop="thumbnail" alt="Hibachi Style Noodles" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Hibachi Style Noodles</figcaption>
+
+      <!-- Gallery Item 8 -->
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="group cursor-pointer">
+        <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img 
+            src="assets/images/gallery/placeholder-thumb.jpg" 
+            itemprop="thumbnail" 
+            alt="Restaurant Gallery Image" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            data-full-image="assets/images/gallery/placeholder-full.jpg"
+          >
+        </div>
+        <figcaption itemprop="caption description" class="mt-3 text-sm font-medium text-gray-700 text-center">Gallery Item 8</figcaption>
       </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g11.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t11.jpg" itemprop="thumbnail" alt="Vegetable Fried Rice" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Vegetable Fried Rice</figcaption>
-      </figure>
-      <!-- / .gallery__figure-->
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="gallery__figure"><a href="assets/images/gallery/g12.jpg" itemprop="contentUrl" data-size="600x429"><img src="assets/images/gallery/t12.jpg" itemprop="thumbnail" alt="Chicken Fried Rice" class="gallery__image"></a>
-        <figcaption itemprop="caption description" class="gallery__caption">Chicken Fried Rice</figcaption>
-      </figure>
-      <!-- / .gallery__figure-->
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <!-- Close Button - Fixed to top right of screen -->
+    <button 
+      id="modal-close" 
+      class="fixed top-4 right-4 z-50 w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-colors"
+      aria-label="Close gallery"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    
+    <div class="relative max-w-4xl max-h-full w-full h-full flex items-center justify-center">
+
+      <!-- Navigation Arrows -->
+      <button 
+        id="modal-prev" 
+        class="absolute left-4 z-10 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-colors"
+        aria-label="Previous image"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button 
+        id="modal-next" 
+        class="absolute right-4 z-10 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-colors"
+        aria-label="Next image"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <!-- Image Container -->
+      <div class="w-full h-full flex items-center justify-center">
+        <img 
+          id="modal-image" 
+          class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" 
+          alt=""
+        >
+      </div>
+
+      <!-- Caption -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-lg">
+        <p id="modal-caption" class="text-sm font-medium"></p>
+      </div>
     </div>
   </div>
 </section>

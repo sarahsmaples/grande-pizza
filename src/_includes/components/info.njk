@@ -1,82 +1,73 @@
-  <div class="wave-top"></div>
-  <!--UPDATE HOURS AND CONTACT INFO -->
-  <div class="container">
-    <div class="row">
-      <!-- Hours of Operation Column -->
-      <div class="col-6 col-tablet-6 col-12">
-        <section id="hours" class="section--hours text-center" style="margin-top: 40px;">
-          <header class="section__header">
-            <h2 class="section__title" style="margin-bottom: 5px;">
-              <svg class="icon icon__page-intro">
-                <use xlink:href="#icon-clock" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-              </svg>Hours of Operation
-            </h2>
-          </header>
-          <div class="section-box__small--outer">
-            <div id="wrapper__center" class="section-box__small">
-              <div class="hours__padding">
-                  <table class="hours__table">
-                    <thead>
-                      <tr>
-                        <th>Day</th>
-                        <th>Lunch Hours</th>
-                        <th>Dinner Hours</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>Monday</strong></td>
-                        <td>11:30am - 2:00pm</td>
-                        <td>3:00pm - 8:45pm</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Tuesday - Thursday</strong></td>
-                        <td>11:30am - 2:00pm</td>
-                        <td>3:00pm - 8:30pm</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Friday - Saturday</strong></td>
-                        <td>11:30am - 2:00pm</td>
-                        <td>3:00pm - 8:45pm</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Sunday</strong></td>
-                        <td>11:30am - 2:00pm</td>
-                        <td>3:00pm - 8:15pm</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
+<div class="bg-gray-50 py-24 sm:py-32 dark:bg-gray-900">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <h2 class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{{ client.cuisine }}</h2>
+    <p class="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">{{ client.restaurantName }}</p>
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+      <div class="flex p-px lg:col-span-4">
+        <div class="w-full overflow-hidden rounded-lg bg-white shadow outline outline-1 outline-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem] dark:bg-gray-800 dark:shadow-none dark:outline-white/15">
+          <div class="p-10">
+            <h3 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400">Hours</h3>
+            <div class="mt-4">
+              <table class="w-full text-sm text-gray-600 dark:text-gray-400">
+                <thead>
+                  <tr class="border-b border-gray-200 dark:border-gray-600">
+                    <th class="text-left py-2 font-medium text-gray-900 dark:text-white">Day</th>
+                    <th class="text-left py-2 font-medium text-gray-900 dark:text-white">Lunch</th>
+                    <th class="text-left py-2 font-medium text-gray-900 dark:text-white">Dinner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for schedule in client.hours.schedule %}
+                  <tr>
+                    <td class="py-1">{{ schedule.day }}</td>
+                    <td class="py-1">{{ schedule.lunch }}</td>
+                    <td class="py-1">{{ schedule.dinner }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-      
-      <!-- Contact Information Column -->
-      <div class="col-6 col-tablet-6 col-12">
-        <section id="contact-info" class="section--contact text-center" style="margin-top: 40px;">
-          <header class="section__header">
-            <h2 class="section__title" style="margin-bottom: 5px;">
-              <svg class="icon icon__page-intro">
-                <use xlink:href="#icon-location" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-              </svg>Contact Information
-            </h2>
-          </header>
-          <div class="section-box__small--outer">
-            <div id="wrapper__center" class="section-box__small">
-              <div class="contact__padding">
-                <div class="contact__text">
-                  <strong>Address:</strong><br>
-                  6565 Babcock Road, Suite 19<br>
-                  San Antonio, TX 78249<br><br>
-                  <strong>Phone:</strong><br>
-                  (877) 545-7866
-                </div>
+      <div class="flex p-px lg:col-span-2">
+        <div class="w-full overflow-hidden rounded-lg bg-white shadow outline outline-1 outline-black/5 lg:rounded-tr-[2rem] dark:bg-gray-800 dark:shadow-none dark:outline-white/15">
+          <img src="/assets/images/restaurant-gallery-1000x1000.jpg" alt="Restaurant interior" class="h-80 w-full object-cover" />
+        </div>
+      </div>
+      <div class="flex p-px lg:col-span-3">
+        <div class="w-full overflow-hidden rounded-lg bg-white shadow outline outline-1 outline-black/5 lg:rounded-bl-[2rem] dark:bg-gray-800 dark:shadow-none dark:outline-white/15">
+          <img src="/assets/images/restaurant-gallery-1000x1000.jpg" alt="Restaurant ambiance" class="h-80 w-full object-cover" />
+        </div>
+      </div>
+      <div class="flex p-px lg:col-span-3">
+        <div class="w-full overflow-hidden rounded-lg bg-white shadow outline outline-1 outline-black/5 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem] dark:bg-gray-800 dark:shadow-none dark:outline-white/15">
+          <div class="p-10">
+            <h3 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400">Contact</h3>
+            <div class="mt-4 space-y-3">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="text-sm text-gray-600 dark:text-gray-400">{{ client.contact.address }}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span class="text-sm text-gray-600 dark:text-gray-400">{{ client.contact.phone }}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span class="text-sm text-gray-600 dark:text-gray-400">{{ client.contact.email }}</span>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   </div>
-
+</div>
