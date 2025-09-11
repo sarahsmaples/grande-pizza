@@ -810,6 +810,10 @@ video {
 .p-px {
   padding: 1px;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -841,6 +845,10 @@ video {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .pb-24 {
   padding-bottom: 6rem;
@@ -1024,6 +1032,11 @@ video {
 .hover\:bg-primary-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(224 0 64 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-opacity-30:hover {
@@ -1496,6 +1509,11 @@ video {
   .dark\:hover\:bg-primary-500:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(224 0 64 / var(--tw-bg-opacity));
+  }
+
+  .dark\:hover\:bg-primary-600:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(199 0 57 / var(--tw-bg-opacity));
   }
 
   .dark\:hover\:text-white:hover {
