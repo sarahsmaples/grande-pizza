@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hero section that accounts for header height */
+.hero-with-header {
+  height: calc(100vh - var(--header-height));
+}
+
+/* Calculate actual header height based on Tailwind classes */
+:root {
+  /* py-2.5 = 0.625rem top + 0.625rem bottom = 1.25rem
+     Plus estimated nav content height (logo + buttons) ≈ 3rem
+     Total: ~4.25rem */
+  --header-height: 3.75rem;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    /* lg:px-6 and lg:py-2.5 with larger content ≈ 4.5rem */
+    --header-height: 3.5rem;
+  }
+}
