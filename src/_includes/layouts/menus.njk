@@ -50,16 +50,13 @@
       }
     </script>
 
-    <!-- ADD GOOGLE ANALYTICS -->
-
   </head>
 
   <body>
-    {% include "components/header.njk" %}
+    {% include "components/header-menus.njk" %}
     <main>
       {% block content %}{% endblock %}
     </main>
-    {% include "components/footer.njk" %}
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     <script type="module" src="/assets/js/main.js"></script>
   </body>
