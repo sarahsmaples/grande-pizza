@@ -69,4 +69,23 @@ module.exports = {
     platter: 'Family Platter',
     dessert: 'Dessert',
   },
+
+  // Menu Cards for Info Component
+  menuCards: [
+    {
+      image: 'assets/images/restaurant-gallery-1000x1000.jpg',
+      pretitle: 'LUNCH & DINNER',
+      title: 'ALL DAY'
+    },
+    {
+      image: 'assets/images/restaurant-gallery-1000x1000.jpg',
+      pretitle: 'LUNCH',
+      title: 'PRE-FIXE'
+    },
+    {
+      image: 'assets/images/restaurant-gallery-1000x1000.jpg',
+      pretitle: 'EVENTS',
+      title: 'PARTY MENUS'
+    }
+  ],
 }
