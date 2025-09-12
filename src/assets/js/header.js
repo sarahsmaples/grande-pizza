@@ -1,63 +1,69 @@
 /**
- * Mobile menu functionality
+ * Mobile menu functionality using dialog element
  */
 export function initHeader() {
-  // Mobile menu toggle functionality
-  const mobileMenuToggle = document.querySelector('[data-collapse-toggle="mobile-menu-2"]');
-  const mobileMenu = document.getElementById('mobile-menu-2');
-  const hamburgerIcon = mobileMenuToggle.querySelector('svg:first-child');
-  const closeIcon = mobileMenuToggle.querySelector('svg:last-child');
-  const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+  // Mobile menu dialog functionality
+  const mobileMenuDialog = document.getElementById('mobile-menu');
+  const openButton = document.querySelector('[command="show-modal"][commandfor="mobile-menu"]');
+  const closeButton = document.querySelector('[command="close"][commandfor="mobile-menu"]');
+  const mobileMenuLinks = mobileMenuDialog.querySelectorAll('a[href^="#"]');
 
-  function toggleMobileMenu() {
-    const isHidden = mobileMenu.classList.contains('hidden');
-    
-    if (isHidden) {
-      // Show menu
-      mobileMenu.classList.remove('hidden');
-      mobileMenu.classList.add('flex');
-      hamburgerIcon.classList.add('hidden');
-      closeIcon.classList.remove('hidden');
-      mobileMenuToggle.setAttribute('aria-expanded', 'true');
-    } else {
-      // Hide menu
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-      hamburgerIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
-      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+  function openMobileMenu() {
+    if (mobileMenuDialog) {
+      mobileMenuDialog.showModal();
     }
   }
 
   function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('flex');
-    hamburgerIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
-    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    if (mobileMenuDialog) {
+      mobileMenuDialog.close();
+    }
   }
 
-  // Toggle menu when button is clicked
-  mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+  // Open menu when open button is clicked
+  if (openButton) {
+    openButton.addEventListener('click', openMobileMenu);
+  }
 
-  // Close menu when clicking on menu links
+  // Close menu when close button is clicked
+  if (closeButton) {
+    closeButton.addEventListener('click', closeMobileMenu);
+  }
+
+  // Close menu when clicking on menu links (for same-page navigation)
   mobileMenuLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-      if (!mobileMenu.classList.contains('hidden')) {
+  // Close menu when clicking on backdrop
+  if (mobileMenuDialog) {
+    mobileMenuDialog.addEventListener('click', (e) => {
+      // Close if clicking on the dialog backdrop (not the content)
+      if (e.target === mobileMenuDialog) {
         closeMobileMenu();
       }
-    }
-  });
+    });
 
-  // Close menu when pressing Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-      closeMobileMenu();
+    // Close menu when pressing Escape (handled natively by dialog, but we can add custom handling)
+    mobileMenuDialog.addEventListener('cancel', (e) => {
+      // Optional: prevent default and add custom behavior if needed
+      // e.preventDefault();
+    });
+  }
+
+  // Header scroll functionality
+  const header = document.getElementById('main-header');
+  
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      header.classList.add('bg-secondary-700');
+    } else {
+      header.classList.remove('bg-secondary-700');
     }
-  });
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  
+  // Initial check in case page loads scrolled
+  handleScroll();
 }
