@@ -5,7 +5,7 @@
     <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
       <div class="flex p-px lg:col-span-4">
         <div class="w-full overflow-hidden rounded-lg bg-white shadow outline outline-1 outline-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]">
-          <div class="p-10">
+          <div class="p-5 lg:p-10">
             <h3 class="text-lg font-semibold text-primary-500">Hours</h3>
             <div class="mt-4">
               <table class="w-full text-sm text-gray-600">
@@ -42,7 +42,7 @@
       </div>
       <div class="flex p-px lg:col-span-3">
         <div class="w-full overflow-hidden rounded-lg bg-white shadow outline outline-1 outline-black/5 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]">
-          <div class="p-10 flex flex-col justify-end h-full">
+          <div class="p-5 lg:p-10 flex flex-col justify-end h-full">
             <h3 class="text-lg font-semibold text-primary-500">Contact</h3>
             <div class="mt-4 space-y-3">
               <div class="flex items-center gap-3">
@@ -67,7 +67,7 @@
             </div>
             
             {% if client.socialMedia.instagram or client.socialMedia.twitter or client.socialMedia.facebook or client.socialMedia.yelp or client.socialMedia.googleBusiness %}
-            <div class="mt-auto pt-6 px-10 border-t border-gray-100">
+            <div class="mt-auto pt-6 px-10 lg:border-t lg:border-gray-100">
               <div class="flex items-center justify-center gap-4">
                 {% if client.socialMedia.instagram %}
                 <a href="{{ client.socialMedia.instagram }}" target="_blank" rel="noopener noreferrer" class="text-primary-500 hover:text-primary-600">
