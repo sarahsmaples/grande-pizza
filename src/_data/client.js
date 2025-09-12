@@ -50,16 +50,16 @@ module.exports = {
   googleMapsEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.8400021938537!2d-97.0494780872197!3d33.007993472033455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2c56f4bec7a7%3A0xa6d2a1b3c5c33796!2s1111%20Lexington%20Ave%2C%20Flower%20Mound%2C%20TX%2075028!5e0!3m2!1sen!2sus!4v1757601973305!5m2!1sen!2sus',
 
-
   // System Integration IDs
   id: '1119',
 
   // Social Media (placeholders for future use)
   socialMedia: {
-    facebook: '',
-    instagram: '',
-    yelp: '',
-    googleBusiness: '',
+    facebook: 'test.com',
+    instagram: 'test.com',
+    twitter: 'test.com',
+    yelp: 'test.com',
+    googleBusiness: 'test.com',
   },
 
   // Menu Categories
