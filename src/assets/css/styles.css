@@ -724,6 +724,9 @@ video {
 .h-80 {
   height: 20rem;
 }
+.h-\[40vh\] {
+  height: 40vh;
+}
 .h-full {
   height: 100%;
 }
@@ -1337,6 +1340,10 @@ video {
     margin-right: 1.5rem;
   }
 
+  .md\:h-\[50vh\] {
+    height: 50vh;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1423,6 +1430,10 @@ video {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-\[60vh\] {
+    height: 60vh;
   }
 
   .lg\:h-full {
