@@ -1,29 +1,34 @@
-  <section id="menu" class="section section--menu text-center">
-    <div class="container-full">
-      <header class="section__header">
-        <h2 class="section__title"><small class="section__pretitle">Menus</small>{{ client.tagline }}</h2>
-      </header>
-      <p class="lead">
-        {{ client.description }}
-      </p>
-      <nav class="menu__nav">
-        <ul class="menu__list menu__list--two">
-          <li class="menu__item">
-            <div class="menu__item-content menu__item-content--lunch"><a href="menu-food.html" class="menu__link"><small>View Our</small>{{ client.menuCategories.food }}</a></div>
-          </li>
-          <li class="menu__item">
-            <div class="menu__item-content menu__item-content--specials"><a href="menu-beverages.html" class="menu__link"><small>View Our</small>{{ client.menuCategories.beverages }}</a></div>
-          </li>
-        </ul>
-        <ul class="menu__list menu__list--two">
-          <li class="menu__item">
-            <div class="menu__item-content menu__item-content--dinner"><a href="menu-platter.html" class="menu__link"><small>View Our</small>{{ client.menuCategories.platter }}</a></div>
-          </li>
-          <li class="menu__item">
-            <div class="menu__item-content menu__item-content--happy-hour"><a href="menu-dessert.html" class="menu__link"><small>View Our</small>{{ client.menuCategories.dessert }}</a></div>
-          </li>
-        </ul>
-      </nav>
+<section class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <!-- Title Section -->
+    <div class="text-center mb-16">
+      <p class="text-base/7 font-semibold text-primary-500">Our Menus</p>
+      <h2 class="mt-2 text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ client.menus.title or "Explore Our Culinary Offerings" }}</h2>
+      {% if client.menus.subtitle %}
+      <p class="mt-6 text-lg/8 text-gray-600 max-w-3xl mx-auto">{{ client.menus.subtitle }}</p>
+      {% endif %}
     </div>
-  </section>
+
+    <!-- Menu Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for card in client.menuCards %}
+      <div class="group">
+        <a
+          href="#"
+          class="block w-full overflow-hidden rounded-lg bg-white shadow-lg outline outline-1 outline-black/5 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:shadow-xl transition-all duration-300"
+          aria-label="View {{ card.title }} menu - {{ card.pretitle }}"
+        >
+          <div class="h-64 sm:h-72 lg:h-80 w-full bg-cover bg-center relative group-hover:scale-105 transition-transform duration-300" style="background-image: url('{{ card.image }}');">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+              <p class="text-xs sm:text-sm font-medium tracking-wider mb-1 sm:mb-2 uppercase opacity-90">{{ card.pretitle }}</p>
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight uppercase">{{ card.title }}</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
