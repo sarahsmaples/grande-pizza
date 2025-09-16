@@ -87,11 +87,11 @@ restaurant-template/
 │   │       └── hero/          # Hero banners
 │   ├── assets/
 │   │   ├── images/            # 📷 Replace with restaurant images
-│   │   ├── sass/              # Custom styles
-│   │   └── css/               # Compiled CSS (auto-generated)
+│   │   ├── sass/              # 🎨 EDIT THESE - Custom styles (styles.scss)
+│   │   └── css/               # ⚠️ AUTO-GENERATED - Do not edit directly
 │   └── pages/                 # Site pages
 ├── tailwind.config.js         # 🎨 Brand colors (CUSTOMIZE THIS)
-└── dist/                      # Built site (auto-generated)
+└── dist/                      # ⚠️ AUTO-GENERATED - Never edit (deployment folder)
 ```
 
 ## Key Features
@@ -101,6 +101,21 @@ restaurant-template/
 - **SEO Ready**: Schema markup, sitemap generation, optimized meta tags
 - **Fast Loading**: Minified assets, optimized images, static generation
 - **Easy Customization**: Data-driven content via `client.js`
+
+## ⚠️ Important File Editing Guidelines
+
+### What TO Edit:
+- **`src/assets/sass/styles.scss`** - Source file for custom styles
+- **`src/_data/client.js`** - Restaurant information and content
+- **`tailwind.config.js`** - Brand colors and Tailwind configuration
+- **Files in `src/` directory** - Templates, components, and pages
+
+### What NOT TO Edit:
+- **`src/assets/css/styles.css`** - Auto-generated from SASS compilation
+- **`dist/` folder** - Auto-generated build output for deployment
+- Any files marked as "auto-generated" in comments
+
+**Remember**: Always edit the source SASS file (`styles.scss`), never the compiled CSS file. The build process will automatically compile your SASS changes into the CSS file.
 
 ## Customization Guide
 
