@@ -6,7 +6,7 @@ export function initHeader() {
   const mobileMenuDialog = document.getElementById('mobile-menu');
   const openButton = document.querySelector('[command="show-modal"][commandfor="mobile-menu"]');
   const closeButton = document.querySelector('[command="close"][commandfor="mobile-menu"]');
-  const mobileMenuLinks = mobileMenuDialog.querySelectorAll('a[href^="#"]');
+  const mobileMenuLinks = mobileMenuDialog ? mobileMenuDialog.querySelectorAll('a[href^="#"]') : [];
 
   function openMobileMenu() {
     if (mobileMenuDialog) {
@@ -53,17 +53,19 @@ export function initHeader() {
 
   // Header scroll functionality
   const header = document.getElementById('main-header');
-  
-  function handleScroll() {
-    if (window.scrollY > 0) {
-      header.classList.add('bg-secondary-700');
-    } else {
-      header.classList.remove('bg-secondary-700');
+
+  if (header) {
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        header.classList.add('bg-secondary-700');
+      } else {
+        header.classList.remove('bg-secondary-700');
+      }
     }
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check in case page loads scrolled
+    handleScroll();
   }
-  
-  window.addEventListener('scroll', handleScroll);
-  
-  // Initial check in case page loads scrolled
-  handleScroll();
 }

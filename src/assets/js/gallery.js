@@ -9,6 +9,11 @@ export function initGallery() {
   const nextBtn = document.getElementById('modal-next')
   const galleryImages = document.querySelectorAll('#gallery-grid figure img')
 
+  // Exit early if required elements don't exist
+  if (!modal || !modalImage || !closeBtn || !prevBtn || !nextBtn || galleryImages.length === 0) {
+    return;
+  }
+
   let currentImageIndex = 0
   const images = Array.from(galleryImages).map((img) => ({
     src: img.dataset.fullImage,
@@ -51,18 +56,20 @@ export function initGallery() {
     img.addEventListener('click', () => openModal(index))
   })
 
-  closeBtn.addEventListener('click', closeModal)
-  prevBtn.addEventListener('click', showPrevImage)
-  nextBtn.addEventListener('click', showNextImage)
+  if (closeBtn) closeBtn.addEventListener('click', closeModal)
+  if (prevBtn) prevBtn.addEventListener('click', showPrevImage)
+  if (nextBtn) nextBtn.addEventListener('click', showNextImage)
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal()
-    }
-  })
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal()
+      }
+    })
+  }
 
   document.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('hidden')) {
+    if (modal && !modal.classList.contains('hidden')) {
       switch (e.key) {
         case 'Escape':
           closeModal()
