@@ -44,3 +44,53 @@
   mask: var(--mask);
   margin-bottom: -60px;
 }
+
+/* Header Center Component Styles */
+#main-header-center {
+  /* Inset border effect - borders are inset from the edges */
+  border-left: 0;
+  border-right: 0;
+
+  /* Add subtle inset shadows to enhance the border effect with white borders */
+  box-shadow:
+    inset 0 2px 0 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Logo overflow effect - extends beyond header bounds */
+#main-header-center .header-logo {
+  /* Allow logo to extend beyond container bounds */
+  position: relative;
+  z-index: 20;
+}
+
+/* Enhanced spacing for centered header layout */
+#main-header-center nav {
+  /* Ensure proper alignment and spacing */
+  min-height: 4rem;
+}
+
+@media (min-width: 1024px) {
+  #main-header-center nav {
+    min-height: 5rem;
+  }
+
+  /* Desktop inset borders with more pronounced effect */
+  #main-header-center {
+    box-shadow:
+      inset 0 3px 0 0 rgba(255, 255, 255, 0.4),
+      inset 0 -3px 0 0 rgba(255, 255, 255, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Header Center height variables */
+:root {
+  --header-center-height: 6rem;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-center-height: 7rem;
+  }
+}
