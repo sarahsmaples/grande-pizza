@@ -589,9 +589,6 @@ video {
 .top-1\/2 {
   top: 50%;
 }
-.top-16 {
-  top: 4rem;
-}
 .top-4 {
   top: 1rem;
 }
@@ -1622,6 +1619,10 @@ video {
     left: 50%;
   }
 
+  .lg\:top-16 {
+    top: 4rem;
+  }
+
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -1706,6 +1707,10 @@ video {
 
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:justify-normal {
+    justify-content: normal;
   }
 
   .lg\:justify-end {

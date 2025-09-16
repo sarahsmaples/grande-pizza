@@ -1,8 +1,6 @@
-<header class="fixed top-16 left-0 right-0 z-50">
-  <!-- Outer container with vertical padding for inset effect -->
-  <div class="py-4">
+<header class="fixed lg:top-16 left-0 right-0 z-50">
   <!-- Logo Container - Overlays the header -->
-  <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+  <div class="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
     <div class="bg-secondary-700 rounded-lg px-6 py-6 border border-white/30 shadow-lg">
       <a href="/" class="block">
         <span class="sr-only">{{ client.restaurantName }}</span>
@@ -14,13 +12,21 @@
     <!-- Inner container with borders and background -->
     <div class="bg-secondary-700 py-[5px]">
       <div class="border-t border-b border-white">
-        <nav aria-label="Global" class="px-4 sm:px-6 lg:px-8 flex items-center py-4">
+        <nav aria-label="Global" class="px-4 sm:px-6 lg:px-8 flex items-center justify-between lg:justify-normal py-4">
 
           <!-- Left Navigation -->
           <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-between lg:gap-x-8 lg:pr-8">
             <a href="#about" class="text-lg font-normal text-white hover:text-gray-300 transition-colors uppercase">About</a>
             <a href="/menus/" class="text-lg font-normal text-white hover:text-gray-300 transition-colors uppercase">Menu</a>
             <a href="#gallery" class="text-lg font-normal text-white hover:text-gray-300 transition-colors uppercase">Gallery</a>
+          </div>
+
+          <!-- Mobile Logo -->
+          <div class="flex lg:hidden">
+            <a href="/" class="block">
+              <span class="sr-only">{{ client.restaurantName }}</span>
+              <img src="/assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="h-12 w-auto" />
+            </a>
           </div>
 
           <!-- Mobile menu button -->
@@ -44,18 +50,9 @@
             <a href="http://88restaurants.com/{{ client.id }}/online_orders/new" class="text-lg font-normal text-white hover:text-gray-300 transition-colors uppercase">Order</a>
             <a href="https://88restaurants.com/{{ client.id }}/reservations/restaurants/booking_details" class="text-lg font-normal text-white hover:text-gray-300 transition-colors uppercase">Reserve</a>
           </div>
-
-          <!-- Mobile Logo -->
-          <div class="flex lg:hidden">
-            <a href="/" class="block">
-              <span class="sr-only">{{ client.restaurantName }}</span>
-              <img src="/assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="h-12 w-auto" />
-            </a>
-          </div>
         </nav>
       </div>
     </div>
-  </div>
 
   <!-- Mobile Menu Dialog -->
   <el-dialog>
