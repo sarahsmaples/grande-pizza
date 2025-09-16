@@ -4,13 +4,20 @@ module.exports = {
   restaurantName: 'Test Restaurant', // Full display name
   cuisine: 'American Cuisine',
 
+  // Page Content
+  hero_title: 'Experience Authentic Restaurant Cuisine',
+  hero_subtitle: 'Fresh ingredients, skilled chefs, and an unforgettable dining experience.',
+  about_title: 'About Title',
+  about_desc_one: 'A template restaurant for testing purposes. Features a variety of delicious dishes made with fresh ingredients and excellent service.',
+  about_desc_two: 'Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id.',
+  about_desc_three: 'Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.',
+
   // Contact Information
   address: {
     street: '1234 Testing Ln',
     city: 'Test City',
     state: 'TX',
     zip: '12345',
-    full: '1234 Testing Ln, Test City, TX 12345',
   },
   phone: '(555) 123-4567',
   email: 'info@testrestaurant.com',
@@ -42,13 +49,7 @@ module.exports = {
   },
 
   // Location & Maps
-  coordinates: {
-    lat: 30.2672,
-    lng: -97.7431,
-  },
   googleMapsUrl: 'https://maps.google.com/test-location',
-  googleMapsEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.8400021938537!2d-97.0494780872197!3d33.007993472033455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2c56f4bec7a7%3A0xa6d2a1b3c5c33796!2s1111%20Lexington%20Ave%2C%20Flower%20Mound%2C%20TX%2075028!5e0!3m2!1sen!2sus!4v1757601973305!5m2!1sen!2sus',
 
   // System Integration IDs
   id: '1119',
@@ -60,14 +61,6 @@ module.exports = {
     twitter: 'test.com',
     yelp: 'test.com',
     googleBusiness: 'test.com',
-  },
-
-  // Menu Categories
-  menuCategories: {
-    food: 'Food Menu',
-    beverages: 'Beverages',
-    platter: 'Family Platter',
-    dessert: 'Dessert',
   },
 
   // Menu Cards for Info Component
