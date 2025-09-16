@@ -25,7 +25,8 @@
   }
 }
 
-/* Wave Border Styles using CSS Mask */
+/* Wave Border Styles using CSS Mask
+   Note: You may need to adjust the top/bottom sections padding/margin for waves to look right */
 .wave-top {
   --mask:
     radial-gradient(61.94px at 50% 86.4px, #000 99%, #0000 101%) calc(50% - 72px) 0/144px 100%,
