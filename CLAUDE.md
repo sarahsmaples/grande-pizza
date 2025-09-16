@@ -47,7 +47,25 @@ This is an **11ty (Eleventy) static site generator** template specifically desig
 1. **Content Changes**: Update `src/_data/client.js` for restaurant information
 2. **Styling**: Modify `src/assets/sass/styles.scss` and use Tailwind utility classes in templates
 3. **Components**: Add/modify components in `src/_includes/components/`
-4. **Testing**: Use `npm run serve` for live development with auto-reload
+4. **New Pages**: Create `.njk` files in `src/` with frontmatter for page-specific metadata
+5. **Testing**: Use `npm run serve` for live development with auto-reload
+
+#### Creating New Pages
+To create a new page with custom metadata:
+
+```njk
+---
+title: "Page Title - {{ client.name }}"
+description: "Page description for SEO and social media sharing."
+---
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <!-- Your page content here -->
+{% endblock %}
+```
+
+The frontmatter YAML provides page-specific `title` and `description` variables that override the base layout's meta tags for SEO and social media.
 
 #### Important Notes
 - The build process requires both CSS compilation AND Eleventy generation
