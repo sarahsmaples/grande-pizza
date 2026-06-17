@@ -17,12 +17,10 @@
     <div class="hidden lg:flex lg:gap-x-12">
       <a href="#about" class="text-lg text-white hover:underline">About</a>
       <a href="/menus/" class="text-lg text-white hover:underline">Menu</a>
-      <a href="#gallery" class="text-lg text-white hover:underline">Gallery</a>
       <a href="#contact" class="text-lg text-white hover:underline">Contact</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
-      <a href="http://88restaurants.com/{{ client.id }}/online_orders/new" class="rounded-md bg-primary-500 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500">Order Online</a>
-      <a href="https://88restaurants.com/{{ client.id }}/reservations/restaurants/booking_details" class="rounded-md bg-primary-500 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500">Reserve Online</a>
+      <a href="{{ client.orderUrl }}" class="rounded-md bg-primary-500 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500">Order Online</a>
     </div>
   </nav>
   <el-dialog>
@@ -46,12 +44,10 @@
               <div class="space-y-2 py-6">
                 <a href="#about" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-gray-900 hover:bg-gray-50">About</a>
                 <a href="/menus/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-gray-900 hover:bg-gray-50">Menu</a>
-                <a href="#gallery" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-gray-900 hover:bg-gray-50">Gallery</a>
                 <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-gray-900 hover:bg-gray-50">Contact</a>
               </div>
               <div class="py-6 space-y-2">
-                <a href="http://88restaurants.com/{{ client.id }}/online_orders/new" class="-mx-3 block rounded-lg px-4 py-3 text-lg font-semibold text-white bg-primary-500 hover:bg-primary-600 text-center">Order Online</a>
-                <a href="https://88restaurants.com/{{ client.id }}/reservations/restaurants/booking_details" class="-mx-3 block rounded-lg px-4 py-3 text-lg font-semibold text-white bg-primary-500 hover:bg-primary-600 text-center">Reserve Online</a>
+                <a href="{{ client.orderUrl }}" class="-mx-3 block rounded-lg px-4 py-3 text-lg font-semibold text-white bg-primary-500 hover:bg-primary-600 text-center">Order Online</a>
               </div>
             </div>
           </div>

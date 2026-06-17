@@ -59,7 +59,7 @@
           {% for schedule in client.hours.schedule %}
           <div>
             <div class="font-medium text-gray-900 text-sm mb-1">{{ schedule.day }}</div>
-            <div class="text-sm text-gray-600">{{ schedule.lunch }}, {{ schedule.dinner }}</div>
+            <div class="text-sm text-gray-600">{{ schedule.hours }}</div>
           </div>
           {% endfor %}
         </div>
@@ -77,16 +77,14 @@
           <thead>
             <tr class="border-b border-gray-200">
               <th class="text-left py-2 font-medium text-gray-900">Day</th>
-              <th class="text-left py-2 font-medium text-gray-900">Lunch</th>
-              <th class="text-left py-2 font-medium text-gray-900">Dinner</th>
+              <th class="text-left py-2 font-medium text-gray-900">Hours</th>
             </tr>
           </thead>
           <tbody>
             {% for schedule in client.hours.schedule %}
             <tr>
               <td class="py-1">{{ schedule.day }}</td>
-              <td class="py-1">{{ schedule.lunch }}</td>
-              <td class="py-1">{{ schedule.dinner }}</td>
+              <td class="py-1">{{ schedule.hours }}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -94,7 +92,7 @@
       </div>
 
       <h3 class="mt-8 text-lg font-medium text-gray-900">Send us a message</h3>
-      <iframe src="https://88restaurants.com/{{ client.id }}/contact_forms" frameborder="0" width="100%" height="545" scrolling="no" class="mt-4"></iframe>
+      <iframe src="{{ client.contactFormUrl }}" frameborder="0" width="100%" height="545" scrolling="no" class="mt-4"></iframe>
     </div>
   </div>
 </section>
