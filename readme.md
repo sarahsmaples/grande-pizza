@@ -179,6 +179,27 @@ This template includes a deployment script that builds and uploads your site:
 
 The script will automatically build the site and upload it via rsync.
 
+### QA Checklists (Pre & Post Deploy)
+
+Two Markdown checklists at the repo root act as a quality gate around each
+deployment. They are designed to be **run by Claude Code** — each item names the
+exact command to run, file to read, or URL to fetch — and Claude produces a
+**Pass / Fail / Needs review** report. They are report-only and never modify
+files, so they're safe to run anytime.
+
+| File | When | What it checks |
+|------|------|----------------|
+| `pre-deploy-checklist.md` | Before `./deploy.sh` | Source & build: production build succeeds, no leftover `client.js` placeholders, SEO/meta tags, structured data, Google Analytics, sitemap/robots config, oversized images, dead/placeholder links |
+| `post-deploy-checklist.md` | After deploying | The **live site** at `client.domain`: site is up, meta/social tags, structured data, GA firing, full sitemap validation (every `<loc>` resolves), dead links & missing assets |
+
+**How to run them:** in Claude Code, just say:
+
+- `Run the pre-deploy checklist` — before deploying
+- `Run the post-deploy checklist` — after deploying (reads the live URL from
+  `client.domain` in `src/_data/client.js`)
+
+Each run ends with a "Recommended fixes" list you can review and approve.
+
 ## Support
 
 For questions about this template:
