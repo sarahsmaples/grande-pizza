@@ -1,19 +1,40 @@
 <div class="bg-white">
   <div class="relative isolate overflow-hidden flex items-center hero-with-header">
-    <div id="hero-slider" class="absolute inset-0 -z-10 size-full">
-      <img src="assets/images/hero-bg-optimized.jpg" alt="" class="hero-slide absolute inset-0 size-full object-cover opacity-100 transition-opacity duration-1000 ease-in-out" />
-      <img src="assets/images/hero-bg-2-optimized.jpg" alt="" class="hero-slide absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
-      <img src="assets/images/hero-bg-3-optimized.jpg" alt="" class="hero-slide absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out" />
-    </div>
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      poster="/assets/images/thumbnail.jpg"
+      aria-hidden="true"
+      class="absolute inset-0 -z-10 size-full object-cover"
+    >
+      <source src="/assets/videos/hero.webm" type="video/webm">
+      <source src="/assets/videos/hero.mp4" type="video/mp4">
+    </video>
     <div class="absolute inset-0 -z-10 bg-black opacity-60"></div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl">
-        <div class="text-center">
-          <h1 class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-7xl">{{ client.hero_title }}</h1>
-          <p class="mt-8 text-pretty text-lg font-medium text-gray-200 sm:text-xl/8">{{ client.hero_subtitle }}</p>
+
+    <div class="mx-auto w-full max-w-7xl px-6 lg:px-16">
+      <div class="flex flex-col items-center lg:flex-row lg:items-center lg:gap-16">
+
+        <!-- Logo: entrance scale + continuous float -->
+        <div class="flex-shrink-0 hero-logo-float">
+          <img src="/assets/images/logo.png" alt="{{ client.restaurantName }}"
+            class="hero-logo w-[90%] max-w-[400px] mx-auto lg:mx-0 lg:w-[500px] lg:max-w-none" />
         </div>
+
+        <!-- Text + CTAs: slide in from right on load -->
+        <div class="mt-6 lg:mt-0 text-center lg:text-left" data-reveal="right" data-delay="400">
+          <h1 class="hidden lg:block font-heading text-5xl xl:text-6xl text-white uppercase leading-tight">{{ client.hero_title }}</h1>
+          <p class="hidden lg:block mt-4 text-lg text-gray-200/90">{{ client.hero_subtitle }}</p>
+          <div class="mt-2 lg:mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="/menus/" class="inline-block text-center border-2 border-white text-white font-heading text-xl uppercase px-10 py-4 rounded-full hover:bg-white hover:text-secondary-700 transition-colors">View Menu</a>
+            <a href="{{ client.orderUrl }}" class="inline-block text-center bg-primary-500 hover:bg-primary-400 text-white font-heading text-xl uppercase px-10 py-4 rounded-full transition-colors">Order Now</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
-

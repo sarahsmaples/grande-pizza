@@ -8,9 +8,8 @@ module.exports = {
   hero_title: 'Hoboken\'s Home for Pizza & Wings',
   hero_subtitle: 'Famous wing sauce, fresh pizza, and Italian-American classics, made fresh and ready when you are.',
   about_title: 'About Grande Pizza & Wings To Go',
-  about_desc_one: 'For over ten years, Grande Pizza & Wings To Go has been serving up Hoboken\'s favorite pizza, wings, pasta, and subs — including our famous wing sauce that keeps locals coming back.',
-  about_desc_two: 'Dine in with us or order online and enjoy at home. We deliver throughout the Newport Area and Lincoln Harbor, so a hot, fresh meal is never far away.',
-  about_desc_three: 'Got an event coming up? Let us handle the food. Our catering takes the stress out of feeding a crowd, whether it\'s a few trays of wings or a full spread of pizza and pasta.',
+  about_desc_one: 'For over ten years, Grande Pizza & Wings To Go has been Hoboken\'s go-to for fresh pizza, famous wings, pasta, and subs. Dine in, order online, or get it delivered to Newport Area and Lincoln Harbor.',
+  about_desc_two: 'Feeding a crowd? Our catering makes it easy — from a few trays of wings to a full spread for any occasion.',
 
   // Contact Information
   address: {
@@ -26,15 +25,19 @@ module.exports = {
   // Business Hours
   hours: {
     schedule: [
-      { day: 'Monday – Thursday', hours: '11 AM–10 PM' },
-      { day: 'Friday – Saturday', hours: '11 AM–12 AM' },
-      { day: 'Sunday', hours: '11 AM–10 PM' },
+      { day: 'Monday',    hours: '11 AM–10 PM' },
+      { day: 'Tuesday',   hours: '11 AM–10 PM' },
+      { day: 'Wednesday', hours: '11 AM–10 PM' },
+      { day: 'Thursday',  hours: '11 AM–10 PM' },
+      { day: 'Friday',    hours: '11 AM–12 AM' },
+      { day: 'Saturday',  hours: '11 AM–12 AM' },
+      { day: 'Sunday',    hours: '11 AM–10 PM' },
     ],
   },
 
 
   // Location & Maps
-  googleMapsUrl: 'https://www.google.com/maps/place/Wings+To+Go+-+Grande+Pizza/@40.7375055,-74.0395825,17z',
+  googleMapsUrl: 'https://www.google.com/maps/place/Wings+To+Go+-+Grande+Pizza/@40.7375055,-74.0395825,17z/data=!3m1!4b1!4m6!3m5!1s0x89c2575b9303dffb:0x900f1a65da04bf08!8m2!3d40.7375055!4d-74.0370076!16s%2Fg%2F1tj4cd5z?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D',
 
   // System Integration IDs
   id: '873',
@@ -49,22 +52,32 @@ module.exports = {
     googleBusiness: 'https://share.google/VfCrPeLjhEklM8h5V',
   },
 
-  // Menu Cards for Info Component
+  // Menu Category Cards
   menuCards: [
     {
-      image: 'assets/images/restaurant-gallery-1000x1000.jpg',
-      pretitle: 'LUNCH & DINNER',
-      title: 'ALL DAY'
+      image: '/assets/images/thumbnail.jpg',
+      name: 'Pizza',
+      description: 'Classic New York-style pies with hand-tossed dough, house-made sauce, and fresh mozzarella. Build your own or go with a specialty.',
     },
     {
-      image: 'assets/images/restaurant-gallery-1000x1000.jpg',
-      pretitle: 'LUNCH',
-      title: 'PRE-FIXE'
+      image: '/assets/images/wings2.jpeg',
+      name: 'Wings',
+      description: 'Our famous wings tossed in 12+ house-made sauces — mild, BBQ, honey garlic, or blazing hot.',
     },
     {
-      image: 'assets/images/restaurant-gallery-1000x1000.jpg',
-      pretitle: 'EVENTS',
-      title: 'PARTY MENUS'
-    }
+      image: '/assets/images/restaurant-gallery-1000x1000.jpg',
+      name: 'Pasta',
+      description: 'Hearty, homemade Italian classics. From Penne Vodka to Chicken Parmigiana over spaghetti.',
+    },
+    {
+      image: '/assets/images/restaurant-gallery-1000x1000.jpg',
+      name: 'Heroes & Subs',
+      description: 'Hot and cold heroes piled high with premium meats, fresh veggies, and melted cheese.',
+    },
+    {
+      image: '/assets/images/restaurant-gallery-1000x1000.jpg',
+      name: 'Salads & Sides',
+      description: 'Fresh salads and crispy sides to round out any order.',
+    },
   ],
 }

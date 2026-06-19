@@ -14,16 +14,14 @@
                 <thead>
                   <tr class="border-b border-gray-200">
                     <th class="text-left py-2 font-medium text-gray-900">Day</th>
-                    <th class="text-left py-2 font-medium text-gray-900">Lunch</th>
-                    <th class="text-left py-2 font-medium text-gray-900">Dinner</th>
+                    <th class="text-left py-2 font-medium text-gray-900">Hours</th>
                   </tr>
                 </thead>
                 <tbody>
                   {% for schedule in client.hours.schedule %}
                   <tr>
                     <td class="py-1">{{ schedule.day }}</td>
-                    <td class="py-1">{{ schedule.lunch }}</td>
-                    <td class="py-1">{{ schedule.dinner }}</td>
+                    <td class="py-1">{{ schedule.hours }}</td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -34,7 +32,7 @@
                 {% for schedule in client.hours.schedule %}
                 <div>
                   <div class="font-medium text-gray-900 mb-1">{{ schedule.day }}</div>
-                  <div class="text-sm text-gray-600">{{ schedule.lunch }}, {{ schedule.dinner }}</div>
+                  <div class="text-sm text-gray-600">{{ schedule.hours }}</div>
                 </div>
                 {% endfor %}
               </div>
@@ -133,8 +131,7 @@
           <div class="h-64 sm:h-72 lg:h-80 w-full bg-cover bg-center relative group-hover:scale-105 transition-transform duration-300" style="background-image: url('{{ card.image }}');">
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-              <p class="text-xs sm:text-sm font-medium tracking-wider mb-1 sm:mb-2 uppercase">{{ card.pretitle }}</p>
-              <h3 class="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight uppercase">{{ card.title }}</h3>
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight uppercase">{{ card.name }}</h3>
             </div>
           </div>
         </a>

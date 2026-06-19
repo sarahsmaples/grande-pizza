@@ -2,13 +2,13 @@
 title: "Menu - Grande Pizza & Wings To Go | Hoboken, NJ"
 description: "Browse the full menu and order online from Grande Pizza & Wings To Go in Hoboken, NJ. Pizza, wings, pasta, subs, and more."
 ---
-{% extends "layouts/menus.njk" %}
+{% extends "layouts/base.njk" %}
 
 {% block content %}
 <div class="bg-gray-50">
   <iframe 
     src="https://88restaurants.com/{{ client.id }}/online_orders/frame" 
-    style="width: 100%; height: calc(100vh - 100px); border: none; scrollbar-width: none; -ms-overflow-style: none;" 
+    style="width: 100%; height: calc(100vh - var(--header-height)); border: none; scrollbar-width: none; -ms-overflow-style: none;" 
     title="{{ client.name }} Online Menu and Ordering"
     loading="lazy"
     allow="payment"

@@ -1,9 +1,9 @@
 <header id="main-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-  <nav aria-label="Global" class="flex items-center justify-between p-4">
-    <div class="flex lg:flex-1">
+  <nav aria-label="Global" class="flex items-center justify-between px-4 py-1">
+    <div class="flex">
       <a href="#" class="-m-1.5 p-1.5">
         <span class="sr-only">{{ client.restaurantName }}</span>
-        <img src="assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="h-16 w-auto" />
+        <img src="/assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="h-24 w-auto" />
       </a>
     </div>
     <div class="flex lg:hidden">
@@ -14,12 +14,10 @@
         </svg>
       </button>
     </div>
-    <div class="hidden lg:flex lg:gap-x-12">
+    <div class="hidden lg:flex lg:ml-auto lg:items-center lg:gap-x-10">
       <a href="#about" class="text-lg text-white hover:underline">About</a>
       <a href="/menus/" class="text-lg text-white hover:underline">Menu</a>
       <a href="#contact" class="text-lg text-white hover:underline">Contact</a>
-    </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
       <a href="{{ client.orderUrl }}" class="rounded-md bg-primary-500 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500">Order Online</a>
     </div>
   </nav>
@@ -30,7 +28,7 @@
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">{{ client.restaurantName }}</span>
-              <img src="assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="h-16 w-auto" />
+              <img src="/assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="h-24 w-auto" />
             </a>
             <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close menu</span>

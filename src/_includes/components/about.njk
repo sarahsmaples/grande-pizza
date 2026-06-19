@@ -1,16 +1,28 @@
-<section class="min-h-screen flex items-center justify-center overflow-hidden bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/about-bg.jpg');">
+<section class="relative bg-secondary-700">
+  <img src="/assets/images/edge-dark.png" alt="" class="w-full absolute top-px -translate-y-full z-10 pointer-events-none" aria-hidden="true" />
+  <img src="/assets/images/edge-dark.png" alt="" class="w-full absolute bottom-px translate-y-full -scale-y-100 z-10 pointer-events-none" aria-hidden="true" />
 
-  <!-- Content container -->
-  <div id="about" class="relative z-10 w-full px-4 md:px-6 py-16 flex justify-center md:justify-end">
-    <!-- White content box -->
-    <div class="bg-white shadow-2xl p-6 md:p-16 max-w-3xl md:mr-16">
-      <p class="text-base/7 font-semibold text-primary-500">About</p>
-      <h1 class="mt-2 text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ client.about_title }}</h1>
-      <p class="mt-6 text-lg/8 md:text-2xl/9 text-gray-700">{{ client.about_desc_one }}</p>
-      <div class="mt-10 text-base/7 md:text-xl/9 text-gray-600">
-        <p>{{ client.about_desc_two }}</p>
-        <p class="mt-8">{{ client.about_desc_three }}</p>
+  <div id="about" class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 py-32 lg:py-40">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Text -->
+      <div data-reveal="left">
+        <p class="text-base/7 font-semibold text-primary-400">About</p>
+        <h2 class="mt-2 font-heading text-4xl sm:text-6xl text-white uppercase">The Grande Way</h2>
+        <p class="mt-6 text-lg/8 md:text-xl/9 text-cream-200">For over ten years, Grande Pizza & Wings To Go has been Hoboken's go-to for fresh pizza, famous wings, pasta, and subs. Dine in, <a href="{{ client.orderUrl }}" class="text-primary-400 hover:text-primary-300 underline underline-offset-2">order online</a>, or get it delivered to Newport Area and Lincoln Harbor.</p>
+        <p class="mt-6 text-base/7 md:text-lg/8 text-cream-100/70">Feeding a crowd? Our catering makes it easy — from a few trays of wings to a full spread for any occasion. <a href="#contact" class="text-primary-400 hover:text-primary-300 underline underline-offset-2">Contact us for catering.</a></p>
+        <a href="{{ client.orderUrl }}" class="mt-10 inline-block bg-primary-500 hover:bg-primary-400 text-white font-heading text-xl uppercase px-10 py-4 rounded-full transition-colors">Order Now</a>
       </div>
+
+      <!-- Right: Storefront image -->
+      <div class="relative" data-reveal="right" data-delay="150">
+        <img
+          src="/assets/images/storefront.png"
+          alt="Grande Pizza & Wings storefront"
+          class="w-full drop-shadow-2xl"
+        />
+      </div>
+
     </div>
   </div>
 </section>
