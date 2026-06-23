@@ -76,8 +76,8 @@ module.exports = {
     },
     {
       image: '/assets/images/restaurant-gallery-1000x1000.jpg',
-      name: 'Salads & Sides',
-      description: 'Fresh salads and crispy sides to round out any order.',
+      name: 'Salads & Apps',
+      description: 'Fresh salads, soups, and appetizers to round out any order.',
     },
   ],
 }

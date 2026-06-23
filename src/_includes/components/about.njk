@@ -1,6 +1,6 @@
 <section class="relative bg-secondary-700">
-  <img src="/assets/images/edge-dark.png" alt="" class="w-full absolute top-px -translate-y-full z-10 pointer-events-none" aria-hidden="true" />
-  <img src="/assets/images/edge-dark.png" alt="" class="w-full absolute bottom-px translate-y-full -scale-y-100 z-10 pointer-events-none" aria-hidden="true" />
+  {% image "/assets/images/edge-dark.png", "", "100vw", [600, 900, 1200, 1920], "w-full absolute top-px -translate-y-full z-10 pointer-events-none", "w-full", "lazy" %}
+  {% image "/assets/images/edge-dark.png", "", "100vw", [600, 900, 1200, 1920], "w-full absolute bottom-px translate-y-full -scale-y-100 z-10 pointer-events-none", "w-full", "lazy" %}
 
   <div id="about" class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 py-32 lg:py-40">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -16,11 +16,7 @@
 
       <!-- Right: Storefront image -->
       <div class="relative" data-reveal="right" data-delay="150">
-        <img
-          src="/assets/images/storefront.png"
-          alt="Grande Pizza & Wings storefront"
-          class="w-full drop-shadow-2xl"
-        />
+        {% image "/assets/images/storefront.png", "Grande Pizza & Wings storefront", "(max-width: 1024px) 100vw, 50vw", [400, 700, 900, 1300], "", "w-full drop-shadow-2xl", "lazy" %}
       </div>
 
     </div>

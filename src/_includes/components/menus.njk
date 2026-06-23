@@ -1,5 +1,5 @@
 <section class="bg-cream-100 py-24 sm:py-32 relative">
-  <img src="/assets/images/edge-light.png" alt="" class="w-full absolute top-px -translate-y-full z-10 pointer-events-none" aria-hidden="true" />
+  {% image "/assets/images/edge-light.png", "", "100vw", [600, 900, 1200, 1920], "w-full absolute top-px -translate-y-full z-10 pointer-events-none", "w-full", "lazy" %}
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
     <div class="text-center mb-12" data-reveal="up">
@@ -11,17 +11,13 @@
 
       {# Featured: Pizza — spans 2 columns, image background #}
       <div class="sm:col-span-2 relative rounded-3xl overflow-hidden min-h-96 bg-secondary-700 flex flex-col justify-end group" data-reveal="up" data-delay="100">
-        <img
-          src="{{ client.menuCards[0].image }}"
-          alt="{{ client.menuCards[0].name }}"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+        {% image client.menuCards[0].image, client.menuCards[0].name, "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 66vw", [600, 900, 1200, 1800], "", "absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105", "lazy" %}
         <div class="absolute inset-0 bg-gradient-to-t from-secondary-900 via-secondary-800/60 to-transparent"></div>
         <div class="relative p-8 sm:p-10">
           <h3 class="font-heading text-5xl sm:text-6xl text-white uppercase">{{ client.menuCards[0].name }}</h3>
           <p class="mt-3 text-cream-200 text-base max-w-md">{{ client.menuCards[0].description }}</p>
-          <a href="{{ client.orderUrl }}" class="mt-6 inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-400 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm">
-            Order Now
+          <a href="/pizza-menu/" class="mt-6 inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-400 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm">
+            View More
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
@@ -29,14 +25,14 @@
 
       {# Wings — dark background with gold accent #}
       <div class="relative rounded-3xl overflow-hidden min-h-96 bg-secondary-700 flex flex-col justify-end group" data-reveal="up" data-delay="200">
-        <img
-          src="{{ client.menuCards[1].image }}"
-          alt="{{ client.menuCards[1].name }}"
-          class="absolute inset-0 w-full h-full object-cover opacity-20 transition-transform duration-700 group-hover:scale-105"
-        />
+        {% image client.menuCards[1].image, client.menuCards[1].name, "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw", [400, 700, 900], "", "absolute inset-0 w-full h-full object-cover opacity-20 transition-transform duration-700 group-hover:scale-105", "lazy" %}
         <div class="relative p-8">
           <h3 class="font-heading text-4xl sm:text-5xl text-gold-400 uppercase">{{ client.menuCards[1].name }}</h3>
           <p class="mt-3 text-cream-100/80 text-sm">{{ client.menuCards[1].description }}</p>
+          <a href="/wings-menu/" class="mt-5 inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-300 text-secondary-700 font-semibold px-6 py-3 rounded-full transition-colors text-sm">
+            View More
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
         </div>
       </div>
 
@@ -44,18 +40,30 @@
       <div class="rounded-3xl bg-gold-400 p-8 min-h-56 flex flex-col justify-end" data-reveal="up" data-delay="150">
         <h3 class="font-heading text-3xl sm:text-4xl text-secondary-700 uppercase">{{ client.menuCards[2].name }}</h3>
         <p class="mt-3 text-secondary-700/75 text-sm">{{ client.menuCards[2].description }}</p>
+        <a href="/pasta-menu/" class="mt-5 self-start inline-flex items-center gap-2 bg-secondary-700 hover:bg-secondary-600 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm">
+          View More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
 
       {# Heroes & Subs — primary orange background #}
       <div class="rounded-3xl bg-primary-500 p-8 min-h-56 flex flex-col justify-end" data-reveal="up" data-delay="250">
         <h3 class="font-heading text-3xl sm:text-4xl text-white uppercase">{{ client.menuCards[3].name }}</h3>
         <p class="mt-3 text-cream-100/90 text-sm">{{ client.menuCards[3].description }}</p>
+        <a href="/heroes-menu/" class="mt-5 self-start inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm">
+          View More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
 
       {# Salads & Sides — accent purple background #}
       <div class="rounded-3xl bg-accent-500 p-8 min-h-56 flex flex-col justify-end" data-reveal="up" data-delay="350">
         <h3 class="font-heading text-3xl sm:text-4xl text-white uppercase">{{ client.menuCards[4].name }}</h3>
         <p class="mt-3 text-cream-100/90 text-sm">{{ client.menuCards[4].description }}</p>
+        <a href="/salads-menu/" class="mt-5 self-start inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm">
+          View More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
 
     </div>

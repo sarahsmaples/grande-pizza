@@ -1,6 +1,6 @@
 ---
-title: "Menu - Grande Pizza & Wings To Go | Hoboken, NJ"
-description: "Browse the full menu and order online from Grande Pizza & Wings To Go in Hoboken, NJ. Pizza, wings, pasta, subs, and more."
+title: "Heroes & Subs Menu - Grande Pizza & Wings To Go | Hoboken, NJ"
+description: "Browse our full heroes & subs menu and order online from Grande Pizza & Wings To Go in Hoboken, NJ."
 ---
 {% extends "layouts/base.njk" %}
 
@@ -10,18 +10,16 @@ description: "Browse the full menu and order online from Grande Pizza & Wings To
 {% block content %}
 <section id="menu" class="text-center" style="height: 100vh;">
   <iframe
-    src="https://88restaurants.com/{{ client.id }}/online_orders/frame"
+    src="https://88restaurants.com/{{ client.id }}/online_orders/frame#menu-2663"
     style="width: 100%; height: 100%; border: none; scrollbar-width: none; -ms-overflow-style: none;"
-    title="{{ client.name }} Online Menu and Ordering"
+    title="Heroes & Subs Menu - Grande Pizza & Wings To Go"
     loading="lazy"
     allow="payment"
   >
-    <!-- Fallback content for browsers that don't support iframes -->
     <p class="p-8 text-center text-gray-600">
       Your browser doesn't support iframes.
-      <a href="https://88restaurants.com/{{ client.id }}/online_orders/frame"
-         target="_blank"
-         rel="noopener noreferrer"
+      <a href="https://88restaurants.com/{{ client.id }}/online_orders/frame#menu-2663"
+         target="_blank" rel="noopener noreferrer"
          class="text-primary-600 hover:text-primary-700 underline">
         Click here to view our menu in a new window
       </a>

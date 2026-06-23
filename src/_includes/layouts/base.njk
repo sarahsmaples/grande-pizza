@@ -28,8 +28,12 @@
     <!-- Sitewide Stylesheets and Scripts -->
     <link rel="stylesheet" href="/assets/css/styles.css">
 
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Comfortaa:wght@400;700&display=swap">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Comfortaa:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Comfortaa:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Comfortaa:wght@400;700&display=swap"></noscript>
 
     {% block head %}{% endblock %}
 
@@ -54,12 +58,12 @@
 
   </head>
 
-  <body>
+  <body {% block bodyAttrs %}{% endblock %}>
     {% include "components/header.njk" %}
     <main>
       {% block content %}{% endblock %}
     </main>
-    {% include "components/footer.njk" %}
+    {% block footer %}{% include "components/footer.njk" %}{% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     <script type="module" src="/assets/js/main.js"></script>
     {% block scripts %}{% endblock %}

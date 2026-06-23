@@ -1,7 +1,7 @@
 <footer class="px-4 py-8 bg-secondary-700 md:p-8 lg:p-10">
   <div class="mx-auto max-w-screen-xl text-center">
       <a href="#" class="flex justify-center items-center text-2xl font-semibold text-white">
-          <img src="/assets/images/logo.png" alt="{{ client.restaurantName }} Logo" class="mr-2 h-16 w-auto" />
+          {% image "/assets/images/logo.png", client.restaurantName + " Logo", "200px", [150, 300, 600], "", "mr-2 h-16 w-auto", "lazy" %}
       </a>
       <p class="my-6 text-gray-200">Experience exceptional {{ client.cuisine }} in the heart of {{ client.address.city }}. Come dine with us!</p>
       <ul class="flex flex-wrap justify-center items-center mb-6 text-white">

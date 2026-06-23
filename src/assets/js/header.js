@@ -55,17 +55,21 @@ export function initHeader() {
   const header = document.getElementById('main-header');
 
   if (header) {
-    function handleScroll() {
-      if (window.scrollY > 0) {
-        header.classList.add('bg-secondary-700');
-      } else {
-        header.classList.remove('bg-secondary-700');
+    // Pages with data-nav-solid (e.g. /menus/) get a permanent background
+    // since their content doesn't scroll the window
+    if (document.body.dataset.navSolid) {
+      header.classList.add('bg-secondary-700');
+    } else {
+      function handleScroll() {
+        if (window.scrollY > 0) {
+          header.classList.add('bg-secondary-700');
+        } else {
+          header.classList.remove('bg-secondary-700');
+        }
       }
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
     }
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Initial check in case page loads scrolled
-    handleScroll();
   }
 }
